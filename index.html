@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <style>
+        body{
+            background-image:url(assest/roll\ the\ dice.jpeg);
+            color:white;
+            text-align: center;
+            font-size: x-large;
+            margin:100px;
+        }
+        input,button{
+
+            font-size: x-large;
+            text-align: center;
+            border-radius: 30px;
+
+        }
+        #final{
+            font-size: x-large;
+            text-align: center;
+            border-radius: 10px;
+          
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Game of Dice</h1>
+    Player 1 <input id="in1" type="number" placeholder="enter the number"  value=""><br><br>
+    Player 2 <input id="in2" type="number" placeholder="enter the number"  value=""><br><br>
+    <input id="dice" type="button" name="roll" value="roll" onclick="startRoll()">
+ 
+   
+
+
+    <script>
+        var player1=0;
+        var player2=0;
+        var p1Score=0;
+        var p2Score=0;
+        var num1="";
+        var num2="";
+
+    function startRoll()
+    {
+        var formula =Math.floor(Math.random()*6)+1;
+         if(player1==0 || num1==""){
+           num1 = "Rolled";
+           num2="";
+           player1=formula;
+           alert("Player 1 roll value:"+player1);
+            p1Score+= parseInt(player1);
+            document.getElementById('in1').value=p1Score;
+            if(p1Score>=50){
+alert("Player 1 Target Reached");
+location.reload();
+            }
+            
+         }
+else if(player2==0|| num2==""){
+    num1="";
+    num2 ="Rolled"
+    player2=formula;
+    alert("Player 2 roll value:"+player2);
+            p2Score+= parseInt(player2);
+            document.getElementById('in2').value=p2Score;
+            if(p2Score>=50){
+                alert("Player 2 target reached")
+                location.reload();
+            }
+}
+       
+
+    }
+    </script>
+    </body>
+
+
+
+
+
+    
+   
+    
+
+    
